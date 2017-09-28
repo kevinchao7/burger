@@ -13,7 +13,7 @@ if(process.env.JAWSDB_URL){
     database: 'v58au56l3bxwphuw'
   });
 }
-connection.connect();
+// connection.connect();
 
 // FOR LOCAL HOST
 // -----------------
@@ -24,13 +24,13 @@ connection.connect();
 //   password: "Insecure",
 //   database: "burgers_db"
 // });
-// connection.connect(function(err) {
-//   if (err) {
-//     console.error("error connecting: " + err.stack);
-//     return;
-//   }
-//   console.log("connected as id " + connection.threadId);
-// });
+connection.connect(function(err) {
+  if (err) {
+    console.error("error connecting: " + err.stack);
+    return;
+  }
+  console.log("connected as id " + connection.threadId);
+});
 
 // Export connection for our ORM to use.
 module.exports = connection;
