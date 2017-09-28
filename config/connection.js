@@ -1,19 +1,18 @@
 // Set up MySQL connection.
 var mysql = require("mysql");
 
-var connection; // for heroku
-
+// HEROKU - JAWS DB ADDON
+var connection;
 if(process.env.JAWSDB_URL){
   connetion = mysql.createConnection(process.env.JAWSDB_URL);
 }else{
   connection = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: 'Insecure',
+    host: 'etdq12exrvdjisg6.cbetxkdyhwsb.us-east-1.rds.amazonaws.com',
+    user: 'lyvc372c2gpuwh3t',
+    password: 'n6uakg60q5rkppqp',
     database: 'burgers_db'
   });
 }
-
 connection.connect();
 
 // FOR LOCAL HOST
